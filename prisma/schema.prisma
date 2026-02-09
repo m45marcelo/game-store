@@ -5,18 +5,46 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+    provider = "prisma-client-js"
+    output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
+    provider = "postgresql"
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
+    id         String   @id @default(uuid())
+    name       String
+    email      String   @unique
+    password   String
+    likedGames Game[]   @relation("UserLikedGames")
+    comments   Comment[]
+    createdAt  DateTime @default(now())
 }
+
+model Game {
+    id            String   @id @default(uuid())
+    name          String
+    price         Float
+    cover         String
+    imagesCover   String[]
+    description   String
+    yearOfRelease DateTime
+    reviews       Float
+    comments      Comment[]
+    usersWhoLiked User[]   @relation("UserLikedGames")
+    createdAt     DateTime @default(now())
+}
+
+model Comment {
+    id            String   @id @default(uuid())
+    authorId      String
+    gameId        String
+    game          Game @relation(fields: [gameId], references: [id])
+    author        User @relation(fields: [authorId], references: [id])
+    description   String
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+}
+
