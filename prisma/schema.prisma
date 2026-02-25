@@ -19,6 +19,7 @@ model User {
     email      String   @unique
     password   String
     likedGames Game[]   @relation("UserLikedGames")
+    gamesPurchased Game[] @relation("UserGamesPurchased")
     comments   Comment[]
     createdAt  DateTime @default(now())
 }
@@ -26,7 +27,11 @@ model User {
 model Game {
     id            String   @id @default(uuid())
     name          String
+    section       String
+    inOffer       Boolean
     price         Float
+    oldPrice      Float
+    totalDiscount Int
     cover         String
     imagesCover   String[]
     description   String
@@ -34,6 +39,7 @@ model Game {
     reviews       Float
     comments      Comment[]
     usersWhoLiked User[]   @relation("UserLikedGames")
+    userWhoPucharsed User[]  @relation("UserGamesPurchased")
     createdAt     DateTime @default(now())
 }
 

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ReduxProvider } from "@/store/provider";
 
 const inter = Inter({
 	subsets: ["latin"],
     display: "swap",
-    weight: ["300", "400", "500", "600", "800"],
+    weight: ["300", "400", "500", "600", "700", "800"],
     variable: "--font-inter"
 });
 
@@ -21,8 +22,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt">
-			<body className={`${inter.variable}`}>
-				{children}
+			<body className={`${inter.variable} antialiased font-inter`}>
+				<ReduxProvider>
+					{children}
+				</ReduxProvider>
 			</body>
 		</html>
 	);

@@ -3,10 +3,10 @@
 @theme {
 	--font-inter: "Inter", sans-serif;
 
-    --color-background: #111111;
-    --color-gray: #252525;
+    --color-background: #111111; 
+    --color-gray: #252525; 
+    --color-gray-black: #161616;
     --color-gray-light: #8E8E8E;
-    --color-footer: #040B19;
     --color-light: #F5F5F5;
     --color-black: #0B0D0F;
     --color-input: #0E0E0E;

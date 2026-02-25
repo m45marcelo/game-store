@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CardOfferGames } from "@/components/ui/CardOfferGames/CardOfferGames";
+import { CardOfferGames } from "@/components/ui/Card/CardOfferGames/CardOfferGames";
 import { SectionTitle } from "@/components/ui/Text/SectionTitle";
 import coverGame6 from "../../../../public/assets/images/Games Store/capas jogos/assassins_creed_shadows.svg";
 import coverGame4 from "../../../../public/assets/images/Games Store/capas jogos/batman.svg";
@@ -15,6 +15,7 @@ import coverGame2 from "../../../../public/assets/images/Games Store/capas jogos
 import coverGame10 from "../../../../public/assets/images/Games Store/capas jogos/indiana_jones.svg";
 import coverGame from "../../../../public/assets/images/Games Store/capas jogos/sniper_elite_resistance.svg";
 import coverGame3 from "../../../../public/assets/images/Games Store/capas jogos/watch_dogs_legion.svg";
+
 export const SectionOfferGames = () => {
 	const gamesInOffer = [
 		{
@@ -24,6 +25,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.2,
 		},
 		{
 			name: "GTA V",
@@ -32,6 +34,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 99,
 			newPrice: 70,
+			review: 4.8,
 		},
 		{
 			name: "Watch Dogs Legion",
@@ -40,6 +43,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 128,
 			newPrice: 99,
+			review: 4.1,
 		},
 		{
 			name: "Batman: Arkham knight",
@@ -48,6 +52,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.7,
 		},
 		{
 			name: "Gears of War",
@@ -56,6 +61,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.7,
 		},
 		{
 			name: "Assassins Creed Shadows",
@@ -64,6 +70,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.2,
 		},
 		{
 			name: "Battlefield V",
@@ -72,6 +79,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.4,
 		},
 		{
 			name: "Dying Light 2",
@@ -80,6 +88,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.2,
 		},
 		{
 			name: "EA Sports FC Standard Edition",
@@ -88,6 +97,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.2,
 		},
 		{
 			name: "Indiana Jone E o Grande Circulo",
@@ -96,6 +106,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.4,
 		},
 		{
 			name: "Call of Duty Black Ops 6",
@@ -104,6 +115,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.5,
 		},
 		{
 			name: "Far Cry 6",
@@ -112,6 +124,7 @@ export const SectionOfferGames = () => {
 			percentDiscount: 30,
 			oldPrice: 156,
 			newPrice: 130,
+			review: 4.1,
 		},
 	];
 	const [gameFavorite, setGameFavorite] = useState(false);
@@ -133,7 +146,9 @@ export const SectionOfferGames = () => {
 						developer={item.developer}
 						percentDiscount={item.percentDiscount}
 						oldPrice={item.oldPrice}
-						newPrice={item.newPrice}
+						price={item.newPrice}
+						inOffer
+						review={item.review}
 					/>
 				))}
 			</div>

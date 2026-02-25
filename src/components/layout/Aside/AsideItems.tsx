@@ -66,8 +66,8 @@ export const AsideItems = () => {
 		},
 	];
 	return (
-		<div className="flex flex-col justify-between items-center h-full w-full">
-			<ul className="flex flex-col gap-1.5 w-full max-w-[12.75rem]">
+		<div className="flex flex-col justify-between h-full w-full pl-5">
+			<ul className="flex flex-col gap-1.5 w-full max-w-47">
 				{links.map((item) => {
 					const currentIcon =
 						item.href === pathName ? item.iconActive : item.icon;
@@ -82,7 +82,7 @@ export const AsideItems = () => {
 					);
 				})}
 			</ul>
-			<ul className="flex flex-col gap-1.5 w-full max-w-[12.75rem]  pb-2 pt-4 border-t border-t-gray">
+			<ul className="flex flex-col gap-1.5 w-full max-w-47  pb-2 pt-4 border-t border-t-gray">
 				{linksUser.map((item) => {
 					const currentIcon =
 						item.href === pathName ? item.iconActive : item.icon;
