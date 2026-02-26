@@ -53,7 +53,7 @@ export const CardOfferGames = ({
 
 	return (
 		<Link href={"/game"}>
-			<div className="h-[17.125rem] w-full max-w-[10.625rem] flex flex-col cursor-pointer">
+			<div className="h-68.5 w-full max-w-42.5 flex flex-col cursor-pointer">
 			<div className="relative">
 				<Image
 					alt="cover game"
