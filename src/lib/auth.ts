@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
-export const { auth, handlers, signIn, signOut } = NextAuth({
+const config = {
     providers: [
         Credentials({
             credentials: {
@@ -14,7 +14,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                     return null;
                 }
 
-                const { prisma } = await import("@/lib/prisma"); // ← import dinâmico
+                const { prisma } = await import("@/lib/prisma");
 
                 const user = await prisma.user.findUnique({
                     where: { email: credentials.email as string }
@@ -38,6 +38,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         })
     ],
     session: {
-        strategy: "jwt"
+        strategy: "jwt" as const
     }
-});
+};
+
+export const { auth, handlers, signIn, signOut } = NextAuth(config);
