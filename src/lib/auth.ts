@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { prisma } from "@/lib/prisma"
 import bcrypt from "bcryptjs";
+
 export const { auth, handlers, signIn, signOut } = NextAuth({
     providers: [
         Credentials({
@@ -10,32 +10,34 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 password: {}
             },
             async authorize(credentials) {
-                if(!credentials?.email || !credentials?.password){
+                if (!credentials?.email || !credentials?.password) {
                     return null;
                 }
 
-                const user = await prisma.user.findUnique({
-                    where: { email: credentials.email}
-                })
+                const { prisma } = await import("@/lib/prisma"); // ← import dinâmico
 
-                if(!user) return null;
+                const user = await prisma.user.findUnique({
+                    where: { email: credentials.email as string }
+                });
+
+                if (!user) return null;
 
                 const validPassword = await bcrypt.compare(
-                    credentials.password,
+                    credentials.password as string,
                     user.password
-                )
+                );
 
-                if(!validPassword) return null;
+                if (!validPassword) return null;
 
-                return{
+                return {
                     id: user.id,
                     name: user.name,
                     email: user.email
-                }
+                };
             },
         })
     ],
     session: {
         strategy: "jwt"
     }
-})
+});
