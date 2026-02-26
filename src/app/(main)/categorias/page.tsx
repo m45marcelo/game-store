@@ -1,6 +1,4 @@
-import { Hero } from "@/components/layout/Hero/Hero"
 import { SectionTitle } from "@/components/ui/Text/SectionTitle"
-import imageBackground from "../../../../public/assets/images/Games Store/icons/image-background.svg"
 import { CardCategory } from "@/components/ui/Card/CardCategory/CardCategory"
 import { Footer } from "@/components/layout/Footer/Footer"
 const Categorias = () => {

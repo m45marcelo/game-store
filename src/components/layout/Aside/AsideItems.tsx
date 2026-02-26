@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import iconCategorias from "../../../../public/assets/images/Games Store/icons/icon-categories.svg";
 import iconCategoriasAtivo from "../../../../public/assets/images/Games Store/icons/icon-categories-active.svg";
-import iconConfiguraçãoesAtivo from "../../../../public/assets/images/Games Store/icons/icon-categories-active.svg";
+import iconConfiguracoesAtivo from "../../../../public/assets/images/Games Store/icons/icon-categories-active.svg";
 import iconFavoritos from "../../../../public/assets/images/Games Store/icons/icon-favorites.svg";
 import iconFavoritosAtivo from "../../../../public/assets/images/Games Store/icons/icon-favorites-active.svg";
 import iconLoja from "../../../../public/assets/images/Games Store/icons/icon-home.svg";
@@ -11,7 +11,7 @@ import iconMeusJogosAtivo from "../../../../public/assets/images/Games Store/ico
 import iconMeusjogos from "../../../../public/assets/images/Games Store/icons/icon-my-games.svg";
 import iconNoticias from "../../../../public/assets/images/Games Store/icons/icon-news.svg";
 import iconNoticiasAtivo from "../../../../public/assets/images/Games Store/icons/icon-news-active.svg";
-import iconConfiguraçãoes from "../../../../public/assets/images/Games Store/icons/icon-settings.svg";
+import iconConfiguracoes from "../../../../public/assets/images/Games Store/icons/icon-settings.svg";
 import iconSuporte from "../../../../public/assets/images/Games Store/icons/icon-support.svg";
 import iconSuporteAtivo from "../../../../public/assets/images/Games Store/icons/icon-support-active.svg";
 import { AsideItem } from "./AsideItem";
@@ -61,8 +61,8 @@ export const AsideItems = () => {
         {
 			href: "/configuracoes",
 			name: "Configurações",
-			icon: iconConfiguraçãoes,
-			iconActive: iconCategoriasAtivo,
+			icon: iconConfiguracoes,
+			iconActive: iconConfiguracoesAtivo,
 		},
 	];
 	return (
