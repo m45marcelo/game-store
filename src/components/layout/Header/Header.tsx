@@ -3,10 +3,10 @@ import iconCart from "../../../../public/assets/images/Games Store/icons/icon-ca
 import iconAlert from "../../../../public/assets/images/Games Store/icons/icon-alert.svg"
 import iconLogin from "../../../../public/assets/images/Games Store/icons/icon-login.svg"
 import { ButtonHeader } from "@/components/layout/Header/ButtonHeader";
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch} from "@/hooks";
 import { changeStateCart } from "@/store/slices/cartStateSlice";
+import Link from "next/link";
 export const Header = () => {
-	const cartState = useAppSelector(state => state.cartState.displayCart)
 	   const dispatch = useAppDispatch();
 	
 		function handleOpenCard(){
@@ -19,7 +19,9 @@ export const Header = () => {
 				<nav className="flex gap-4">
 					<ButtonHeader  onClick={handleOpenCard} icon={iconCart}/>
 					<ButtonHeader icon={iconAlert}/>
-					<ButtonHeader icon={iconLogin} text="Login"/>
+					<Link className="" href={"/login"}>
+						<ButtonHeader icon={iconLogin} text="Login"/>
+					</Link>
 				</nav>
 			</div>
 		</header>

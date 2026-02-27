@@ -10,7 +10,7 @@ export const ButtonAddCart = () => {
         dispatch(changeStateCart("flex"))
     }
     return(
-        <button onClick={handleOpenCard} type="button" className="h-11 w-58.75 flex gap-2 items-center cursor-pointer justify-center rounded-[24px] font-semibold text-white bg-gray border border-border">
+        <button onClick={handleOpenCard} type="button" className="h-11 w-58.75 flex gap-2 items-center cursor-pointer justify-center rounded-3xl font-semibold text-white bg-gray border border-border">
             <Image alt="icon cart" src={iconCart}/>
             <span>Adicionar ao carrinho</span>
         </button>
