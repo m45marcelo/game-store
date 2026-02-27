@@ -14,7 +14,7 @@ const Login = () => {
 			<div className="flex gap-1 mt-6.5 items-center">
                 <span className="text-[0.75rem] font-medium text-gray-light">Ainda não é registrado ?</span>
                 <Link href={"/register"}>
-					<button type="button" className="text-white text-[0.75rem] font-medium cursor-pointer">Criar Conta</button>
+					<button type="button" className="text-white flex items-center text-[0.75rem] font-medium cursor-pointer">Criar Conta</button>
 				</Link>
             </div>
 		</div>

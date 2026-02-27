@@ -16,7 +16,7 @@ const Register = () => {
             <div className="flex gap-1 mt-6.5 items-center">
                 <span className="text-[0.75rem] font-medium text-gray-light">Já é registrado ?</span>
                 <Link href={"/login"}>
-                    <button type="button" className="text-white text-[0.75rem] font-medium cursor-pointer">Logar-se</button>
+                    <button type="button" className="text-white flex items-center text-[0.75rem] font-medium cursor-pointer">Logar-se</button>
                 </Link>
             </div>
         </div>
