@@ -78,7 +78,7 @@ export const RegisterForm = () => {
 				placeholderMessage="Confirme sua senha"
 				htmlFor="input-confirmar-senha"
 				register={register}
-				error={errors.password}
+				error={errors.repeatPassword}
 			/>
 			<ButtonRegisterLogin typeButton="register" />
 		</form>
